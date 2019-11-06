@@ -15,11 +15,11 @@
         <h1>Bienvenido al Sistema SIRCON</h1><br/>
         <h2> Inicio de Sesión</h2><br/>
         
-        <form action="" method="post"><br/>
+        <form action="Entrar" method="post"><br/>
             <label>Usuario: </label>
             <input type="text" name="usuario"/><br/>
             <label>Contraseña: </label>
-            <input type="password" name=""password/><br/>
+            <input type="password" name="pass"/><br/>
             <input type="submit" value="Iniciar Sesión"/><br/>
         </form> 
         <br/>

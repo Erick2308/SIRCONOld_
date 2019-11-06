@@ -10,7 +10,7 @@ public class Conexion {
     private String password = "SirconVS20++";
     private String host = "127.0.0.1";
     private String port = "3306";
-    private String database = "bd_loginjsp";
+    private String database = "Sircon";
     private String classname = "com.mysql.jdbc.Driver";
     private String url = "jdbc:mysql://"+host+":"+port+"/"+database+"?serverTimezone=UTC";
     private Connection con;

@@ -2,22 +2,24 @@ package Controlador;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Consulta extends Conexion{
     
     public boolean autenticacion(String usuario, String password){
         PreparedStatement pst = null;
-        ResultSet rs = null;
+        ResultSet rs = null;        
+        
         try {
-            String consulta = "select * from usuario where usuario = ? and password = ?";
+            String consulta = "select * from registro where usuario = ? and password = ?";
             pst = getConexion().prepareStatement(consulta);
             pst.setString(1, usuario);
             pst.setString(2, password);
             rs = pst.executeQuery();
-            
             if(rs.absolute(1)){
                 return true;
             }
+            
         } catch (Exception e) {
             System.err.println("ERROR: "+e);
         } finally{
@@ -28,16 +30,15 @@ public class Consulta extends Conexion{
             } catch (Exception e) {
                 System.err.println("ERROR: "+e);
             }
-        }
-        
-        return false;
-    }
+        } return false;
+    } 
+    
     public boolean registrar(String nombre, String apellido, String usuario, String password){
         
         PreparedStatement pst = null;
         
         try {
-            String consulta = "insert into usuario (nombre, apellido, usuario, password) values (?,?,?,?)";
+            String consulta = "insert into usuario (nombres, apellidos, usuario, password) values (?,?,?,?)";
             pst = getConexion().prepareStatement(consulta);
             pst.setString(1, nombre);
             pst.setString(2, apellido);
